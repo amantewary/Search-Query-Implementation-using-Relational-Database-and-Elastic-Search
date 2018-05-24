@@ -1,5 +1,84 @@
 ## Assignment - 1
 
+### Installation Notes
+---
+#### MySQL installation on Ubuntu
+It is mandatory to update package information from the MySQL APT repository:
+
+    sudo apt-get update
+
+Install MySQL by the following command:
+
+    sudo apt-get install mysql-server
+
+    systemctl status mysql.service
+
+    mysql_secure_installation
+
+Using nano, vim or other available editor open mtsqld.cnf file:
+
+    sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+Locate the bind-address = 127.0.0.1 line and change 127.0.0.1 to 0.0.0.0 :
+
+
+
+In nano, to save the file, type in (Ctrl + x) and confirm with the key y to save.
+
+Now, restart the service so the previous setup takes effect:
+
+    sudo systemctl restart mysql.service
+
+
+    mysql -h localhost -u myname -p password mydb
+
+
+    mysql -u root -p yourpassword
+
+After successful login, create new user (instead of myuser and mypass choose your own combo):
+
+    CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypass';
+
+    CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
+
+Create an empty database, which you will use for your data import:
+
+    CREATE DATABASE busDB;
+
+
+### ElasticSearch installation
+
+ElasticSearch requires Java. Let's install that first:
+
+    sudo add-apt-repository -y ppa:webupd8team/java
+
+    sudo apt-get update
+
+    sudo apt-get -y install oracle-java8-installer
+
+Download and install the Public Signing Key:
+
+    wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+Save the repository definition to /etc/apt/sources.list.d/elasticsearch-6.x.list:
+
+    echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+
+Run apt-get update and the repository is ready for use. You can install it with:
+
+    sudo apt-get update && sudo apt-get install elasticsearch
+
+This information was taken from: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
+
+We have to do some configuration. File /etc/elasticsearch/elasticsearch.yml contains important configuration details that have to be considered. Open it.
+
+    sudo nano /etc/elasticsearch/elasticsearch.yml
+
+Restart the service so changes take the effect:
+
+    sudo service elasticsearch restart
+
+**More elaborated description is given in [this](https://web.cs.dal.ca/~kosmajac/CSCI5408_tutorials/a1.html#sql) link**
 ### Description
 Halifax.ca is a government website that provides usual information about the events, rules, amenities, etc. We were given the task of extracting information using the Halifax transit open database[1]. For this assignment, we utilized the services provided by Amazon (AWS) and Microsoft Azure to run a Virtual Machine and install software to extract the data. By leveraging the power of cloud, we were able to showcase the answers to the questions asked in the Assignment.
 
