@@ -1,0 +1,8 @@
+{
+    "query": {
+      "match_phrase": {
+        "stop_id": "6108"
+      }
+    },
+    "_source": ["name_stop"]
+  }

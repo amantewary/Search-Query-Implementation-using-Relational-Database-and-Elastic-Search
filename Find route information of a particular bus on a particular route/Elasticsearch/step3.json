@@ -1,0 +1,12 @@
+{
+  "sort": [{
+    "stop_sequence": {
+      "order": "asc"
+    }
+  }],
+  "query": {
+    "match_phrase": {
+      "stop_sequence": "25"
+    }
+  }
+}

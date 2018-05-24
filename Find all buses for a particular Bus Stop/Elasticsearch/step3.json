@@ -1,0 +1,8 @@
+{
+  "query": {
+    "match_phrase": {
+      "trip_id": "6525322-2012_08A-1208BRwd-Weekday-01"
+    }
+  },
+  "_source": ["trip_headsign"]
+}

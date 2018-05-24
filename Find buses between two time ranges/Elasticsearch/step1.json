@@ -1,0 +1,11 @@
+{
+  "query": {
+    "range": {
+      "arrival_time": {
+        "gte": "19:00:00",
+        "lte": "21:30:00",
+        "format": "HH:mm:ss"
+      }
+    }
+  }
+}

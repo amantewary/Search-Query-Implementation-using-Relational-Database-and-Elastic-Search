@@ -1,0 +1,14 @@
+{
+  "size": 0,
+  "aggs": {
+    "counts_stop_id": {
+      "terms": {
+        "field": "stop_id",
+        "order": {
+          "_count": "desc"
+        },
+        "size": 3
+      }
+    }
+  }
+}
