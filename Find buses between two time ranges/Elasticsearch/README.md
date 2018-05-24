@@ -16,7 +16,7 @@
     }
 #### Step 2.
 
-*POST /trip/trips/_search*
+**POST /trip/trips/_search**
 
     {
       "query": {
