@@ -81,6 +81,7 @@ Create an empty database, which you will use for your data import:
       KEY `FK` (`Trip_id`, `Stop_id`)
     );
 
+
 #### ElasticSearch installation
 
 ElasticSearch requires Java. Let's install that first:
