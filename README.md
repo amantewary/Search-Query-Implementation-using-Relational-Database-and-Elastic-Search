@@ -13,13 +13,10 @@ The ERD (Entity-Relationship Diagram) below depicts the relationship between all
 ### Test Results
 The graph demonstrates the performance of MySQL and Elastic Search on each assignment problems. Digressing from the performance comparison for a moment, we tried to run ElasticSearch on AWS cloud service however the config we had was taking a really long time to run ElasticSearch which may have been the bottlenecking factor. We moved our setup to Microsoft Azure, who were providing us with a 4GB RAM system, which was enough to run ElasticSearch with less bottlenecking.
 
-</br>
-</br>
+
 ![Performance Chart](https://firebasestorage.googleapis.com/v0/b/assignment4-fc96b.appspot.com/o/Chart.png?alt=media&token=9e42f9e2-794c-4c3a-9174-9096f20a3eec)
 
-</br>
 From the graph, we can clearly see that even though MySQL queries were faster in some cases, the ElasticSearch performed consistently and way faster than MySQL in the last problem.
-</br>
-</br>
+
 ### Summary
 ElasticSearch, which is built on top of Lucene engine, is a well suited to search a large document. It may not maybe as accurate as conventional databases, however it provides an approximation, which in most cases is enough for making some deductions. With this being said, a relational database has its own perks and one should blindly turn it down. Additionally, we found that Microsoft Azure made the task of configuring the VM a breeze. We would recommend students to use Azure since Microsoft provides $100 credit upfront when they sign-in for it.
