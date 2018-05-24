@@ -6,7 +6,7 @@ POST /stop/stops/_search
     {
       "query": {
         "match_phrase": {
-          "name_stop": "oxford St [northbound] before Quinpool 		Rd"
+          "name_stop": "oxford St [northbound] before Quinpool Rd"
         }
       },
       "_source": ["stop_id"]
