@@ -46,7 +46,7 @@ Create an empty database, which you will use for your data import:
     CREATE DATABASE busDB;
 
 
-### ElasticSearch installation
+#### ElasticSearch installation
 
 ElasticSearch requires Java. Let's install that first:
 
