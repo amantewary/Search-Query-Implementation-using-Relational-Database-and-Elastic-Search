@@ -46,7 +46,42 @@ Create an empty database, which you will use for your data import:
     CREATE DATABASE busDB;
 
 
-### ElasticSearch installation
+#### MySQL Queries
+
+**Create table stops**
+
+    CREATE TABLE `stops` (
+      `Stop_id` int(11),
+      `Name_stop` varchar(68),
+      `Lat` decimal(7,4),
+      `Log` decimal(8,4),
+      PRIMARY KEY (`Stop_id`)
+    );
+    
+**Create table trips**
+
+    CREATE TABLE `trips` (
+      `Block_id` varchar(9),
+      `Route_id` varchar(8),
+      `Trip_headsign` varchar(40),
+      `Service_id` varchar(29),
+      `Shape_id` varchar(8),
+      `Trip_id` varchar(37),
+      PRIMARY KEY (`Trip_id`)
+    );
+    
+**Create table stoptimes**
+
+    CREATE TABLE `stoptimes` (
+      `Trip_id` varchar(37),
+      `Arrival_time` varchar(8),
+      `Departure_time` varchar(8),
+      `Stop_id` int(11),
+      `Stop_sequence` int(11),
+      KEY `FK` (`Trip_id`, `Stop_id`)
+    );
+
+#### ElasticSearch installation
 
 ElasticSearch requires Java. Let's install that first:
 
